@@ -32,8 +32,8 @@
 #north-arrow {
   position: absolute;
   z-index: 1100;
-  top: 50%;
-  right: 16px;
+  bottom: 34px;
+  left: 180px;
   width: 48px;
   height: 62px;
   transform: translateY(-50%);
