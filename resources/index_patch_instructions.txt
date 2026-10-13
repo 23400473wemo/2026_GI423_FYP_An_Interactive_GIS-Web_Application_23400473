@@ -1,0 +1,16 @@
+GI 321 PRACTICAL ASSIGNMENT 1 — QGIS2WEB CUSTOMISATION PATCH
+
+1. Make a backup copy of the complete qgis2web export folder.
+2. Copy custom.css and custom-dashboard.js into the export's resources folder.
+3. Open index.html in Visual Studio Code.
+4. In the <head> section, immediately after the existing qgis2web.css line, add:
+
+   <link rel="stylesheet" href="./resources/custom.css">
+
+5. Near the end of <body>, immediately after the existing qgis2web.js line, add:
+
+   <script src="./resources/custom-dashboard.js"></script>
+
+6. Save index.html and refresh with Ctrl+F5.
+7. The custom JavaScript must load after qgis2web.js, because the generated map and layer variables must already exist.
+8. Publish the complete export folder, not index.html by itself.

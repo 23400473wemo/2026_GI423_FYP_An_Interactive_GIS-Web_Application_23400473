@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link href="resources/photon-geocoder-autocomplete.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <link rel="stylesheet" href="./resources/custom.css">
+        <style>
+        html, body {
+            background-color: #fffafa;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #000101!important;
+            border-radius: 0px;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #000101!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        } 
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        } 
+        </style>
+
+        <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .map-title{
+            width:100%;
+            box-sizing: border-box;
+            flex: 0 0 auto;
+            padding: 14px 24px;
+            background: rgba(255,255,255,0.96);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 25);
+            font-family: Arial, sans-serif;
+            color: #222;
+            text-align: center;
+        }
+        .map-title-content {
+            max-width: 1100px;
+        }
+        .map-title h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .map-title p {
+            margin: 8px 0 0;
+            color: #444;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        #map {
+            width: 100%;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div class="map-title">
+            <div class="map-title-content">
+                <h1>Papua New Guinea University of Technology Interactive Utility Network Map</h1>
+                <p>
+                    This project presents an interactive GIS-based map of the Papua New Guinea
+                    University of Technology utility network. It brings together mapped water
+                    and sewer pipelines with related features, including manholes, valves,
+                    junctions, end nodes, and service connections. The map allows users to
+                    explore the spatial distribution of these assets and supports a clearer
+                    understanding of the campus utility infrastructure.
+                </p>
+            </div>
+        </div>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="resources/photon-geocoder-autocomplete.min.js"></script>
+        <script src="resources/olms.js"></script>
+        <script src="layers/MainSewerPipeline_1.js"></script><script src="layers/MainWaterPipeline_2.js"></script><script src="layers/MainBlowOffValve_3.js"></script><script src="layers/MainEndNode_4.js"></script><script src="layers/MainManholes_5.js"></script><script src="layers/MainPipeJunction_6.js"></script><script src="layers/MainServiceConnection_7.js"></script>
+        <script src="styles/MainSewerPipeline_1_style.js"></script><script src="styles/MainWaterPipeline_2_style.js"></script><script src="styles/MainBlowOffValve_3_style.js"></script><script src="styles/MainEndNode_4_style.js"></script><script src="styles/MainManholes_5_style.js"></script><script src="styles/MainPipeJunction_6_style.js"></script><script src="styles/MainServiceConnection_7_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+        <script src="./resources/custom.css"></script>
+        <script src="./resources/custom-dashboard.js"></script>       
+    </body>
+
+</html>

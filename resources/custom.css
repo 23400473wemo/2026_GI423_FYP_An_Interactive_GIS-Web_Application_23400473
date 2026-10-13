@@ -1,0 +1,255 @@
+/* GI 423 qgis2web custom interface
+   Place this file in resources/custom.css and link it AFTER qgis2web.css. */
+
+:root {
+  --panel-bg: rgba(255, 255, 255, 0.96);
+  --panel-border: #173a5e;
+  --text: #10233a;
+  --muted: #5d6b7a;
+  --accent: #0b6b50;
+  --warning: #b45500;
+  --danger: #a32121;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+#gi423-title {
+  position: center;
+  z-index: 1100;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel-bg);
+  color: var(--text);
+  border: 2px solid var(--panel-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 8px 14px;
+  max-width: min(680px, calc(100vw - 170px));
+  text-align: center;
+  font: 700 20px/1.25 Arial, sans-serif;
+}
+
+#north-arrow {
+  position: absolute;
+  z-index: 1100;
+  top: 50%;
+  right: 16px;
+  width: 48px;
+  height: 62px;
+  transform: translateY(-50%);
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  user-select: none;
+}
+
+#north-arrow .north-symbol {
+  font-size: 30px;
+  line-height: 28px;
+  transform-origin: 50% 55%;
+}
+
+#north-arrow .north-label {
+  position: absolute;
+  top: 4px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+#dashboard-toggle {
+  position: absolute;
+  z-index: 1102;
+  top: 86px;
+  left: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--panel-border);
+  color: #fff;
+  padding: 10px 12px;
+  font: 700 14px Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+#dashboard-panel {
+  position: absolute;
+  z-index: 1101;
+  left: 10px;
+  top: 120px;
+  width: min(360px, calc(100vw - 20px));
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+#dashboard-panel[hidden] { display: none; }
+
+.dashboard-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dashboard-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.dashboard-close {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.dashboard-note {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.metric-card {
+  border: 1px solid #b9c4cf;
+  border-left: 5px solid var(--accent);
+  background: #fff;
+  border-radius: 7px;
+  padding: 9px;
+  cursor: pointer;
+  min-height: 66px;
+}
+
+.metric-card:hover,
+.metric-card:focus {
+  outline: 3px solid rgba(23, 58, 94, 0.2);
+}
+
+.metric-card.danger { border-left-color: var(--danger); }
+.metric-card.warning { border-left-color: var(--warning); }
+.metric-card.neutral { border-left-color: #68778a; }
+
+.metric-value {
+  display: block;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.metric-label {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dashboard-section {
+  margin-top: 14px;
+  border-top: 1px solid #d4dce4;
+  padding-top: 10px;
+}
+
+.dashboard-section h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 112px 1fr 28px;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.bar-track {
+  height: 10px;
+  background: #e8edf2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.dashboard-actions button,
+.dashboard-actions select,
+.dashboard-actions input {
+  min-height: 34px;
+  border: 1px solid #9ca9b5;
+  border-radius: 5px;
+  background: #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.dashboard-actions button {
+  cursor: pointer;
+  background: var(--panel-border);
+  color: #fff;
+  border-color: var(--panel-border);
+}
+
+#dashboard-status {
+  margin-top: 8px;
+  padding: 7px;
+  border-radius: 5px;
+  background: #edf3f8;
+  font-size: 12px;
+}
+
+.ol-scale-bar,
+.ol-scale-line {
+  left: 12px !important;
+  bottom: 34px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  padding: 4px !important;
+}
+
+@media (max-width: 720px) {
+  #gi423-title {
+    left: 8px;
+    right: 8px;
+    transform: none;
+    max-width: none;
+    font-size: 13px;
+  }
+
+  #north-arrow {
+    width: 48px;
+    height: 64px;
+  }
+
+  #dashboard-toggle { top: 96px; }
+  #dashboard-panel { top: 140px; max-height: calc(100vh - 240px); }
+  .dashboard-grid { grid-template-columns: 1fr 1fr; }
+}
